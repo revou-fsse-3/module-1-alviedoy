@@ -41,20 +41,36 @@
             </div>
         </article>
         <h2>Video Documentation</h2>
-        <iframe width="420" height="315" src="https://www.youtube.com/watch?v=GvwZLaKapjQ">
-        </iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/GvwZLaKapjQ?si=Iv0uAtBoTxB5QOoJ"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
 
         <h3>Get more insights on automotive racing history through our newspaper!</h3>
 
-        <form action="/action_page.php">
+        <form id="myForm" onsubmit="return validateForm()" method="post" required>
             <label for="fname">First name:</label><br>
             <input type="text" id="fname" name="fname" value=""><br>
             <label for="lname">Last name:</label><br>
             <input type="text" id="lname" name="lname" value=""><br>
-            <label for="E-mail">E-mail:</label><br>
-            <input type="text" id="E-mail" name="E-mail" value=""><br><br>
+            <label for="email">E-mail:</label><br>
+            <input type="text" id="email" name="email" value=""><br><br>
             <input type="submit" value="Submit">
         </form>
+
+        <script>
+            function validateForm() {
+                var fname = document.getElementById('fname').value;
+                var lname = document.getElementById('lname').value;
+                var email = document.getElementById('email').value;
+
+                if (fname == '' || lname == '' || email == '') {
+                    alert('Please fill in all fields.');
+                    return false;
+                }
+                return true;
+            }
+        </script>
     </main>
     <br>
     <br>
